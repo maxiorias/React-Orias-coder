@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
-import theme from './theme'; 
+import ItemListContainer from './components/ItemListContainer';
+import theme from './theme';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <CssBaseline />
       <div>
         <Navbar />
+        <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
       </div>
     </ThemeProvider>
   );
