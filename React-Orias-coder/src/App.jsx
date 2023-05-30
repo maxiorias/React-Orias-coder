@@ -1,19 +1,19 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
-import Header from "./components/Header"
-import './App.css'
-
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
+import Navbar from './components/Navbar';
+import theme from './theme'; // Importa el tema que has creado
+import './App.css';
 
 function App() {
-  
   return (
-    
-    <div>
-      <Header  />
-    </div>
-   
-  
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <div>
+        <Navbar />
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

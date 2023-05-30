@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.header__container {
+.navbar__container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 0;
@@ -12,13 +12,14 @@
   align-items: center;
 }
 
-.header__logo {
-  font-size: 40px;
+.navbar__logo {
+  font-size: 40px !important;
   font-weight: 700;
   color: #ffffff;
+  width: 80px;
 }
 
-.header__nav {
+.navbar__nav {
   display: flex;
   gap: 50px;
   align-items: center;
@@ -27,17 +28,18 @@
   
 }
 
-.header__link {
+.navbar__link {
   color: #ffffff;
   font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
-.header__link:hover {
+.navbar__link:hover {
   color: #cccccc;
 }
 
-.header__link:active {
-  color: #999999;
+.navbar__link:active {
+  color: #cc512b;
 }
+
