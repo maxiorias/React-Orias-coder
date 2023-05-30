@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
-import theme from './theme'; // Importa el tema que has creado
+import theme from './theme'; 
 import './App.css';
 
 function App() {

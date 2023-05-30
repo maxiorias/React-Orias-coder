@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
     return (
@@ -23,6 +24,7 @@ const Navbar = () => {
               Contacto
             </a>
           </nav>
+          <CartWidget />
         </Toolbar>
       </AppBar>
     
