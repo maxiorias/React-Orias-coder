@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-// Define tu objeto de tema personalizado
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -10,7 +10,7 @@ const theme = createTheme({
       main: '#03dac6',
     },
   },
-  // Aquí puedes agregar más opciones de configuración de tu tema
+  
 });
 
 export default theme;
