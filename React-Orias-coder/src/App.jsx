@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import theme from './theme';
 import './App.css';
+import '../src/components/ItemListContainer.css'
 
 function App() {
   return (
