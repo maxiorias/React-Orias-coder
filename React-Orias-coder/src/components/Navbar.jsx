@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { Home, ShoppingBasket, Email } from '@mui/icons-material';
 import CartWidget from './CartWidget';
 
 const Navbar = () => {
@@ -14,19 +15,22 @@ const Navbar = () => {
           </Typography>
   
           <nav className="navbar__nav">
-            <a className="navbar__link" href="#">
-              Inicio
-            </a>
-            <a className="navbar__link" href="#">
-              Productos
-            </a>
-            <a className="navbar__link" href="#">
-              Contacto
-            </a>
-          </nav>
-          <CartWidget />
-        </Toolbar>
-      </AppBar>
+          <a className="navbar__link" href="#">
+            <Home sx={{ mr: 1 }} />
+            Inicio
+          </a>
+          <a className="navbar__link" href="#">
+            <ShoppingBasket sx={{ mr: 1 }} />
+            Productos
+          </a>
+          <a className="navbar__link" href="#">
+            <Email sx={{ mr: 1 }} />
+            Contacto
+          </a>
+        </nav>
+        <CartWidget />
+      </Toolbar>
+    </AppBar>
     
     );
   };

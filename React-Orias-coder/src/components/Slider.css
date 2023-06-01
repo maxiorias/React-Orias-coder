@@ -1,24 +1,70 @@
 .slider {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
+  position: relative; 
+}
+
+.slider-content {
+  display: flex;
+  width: 200%;
+  animation: slide 20s infinite linear;
+}
+
+.slider-image {
+  width: 500px;
+  height: 600px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slider-image:hover {
+  filter: grayscale(100%) opacity(0.8); 
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
   }
-  
-  .slider-content {
-    display: flex;
-    width: 100%;
-    animation: slide 20s infinite linear;
+  100% {
+    transform: translateX(-50%);
   }
-  
-  .slider-image {
-    width: 40%;
-    object-fit: cover;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+}
+
+.slider-image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+}
+
+.slider-image-container:hover img {
+  transform: scale(1.2);
+  transition: transform 1.3s ease;
+}
+
+.slider-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.slider-image-container:hover::before {
+  opacity: 1;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.slider-image-container h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
