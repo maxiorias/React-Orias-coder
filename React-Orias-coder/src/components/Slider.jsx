@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 const Slider = () => {
   const sliderRef = useRef(null);
-  const sliderImages = ['../public/1.jpg', '../public/2.jpg', '../public/3.jpg', '../public/4.jpg'];
+  const sliderImages = ['../public/camisa.jpg', '../public/2.jpg', '../public/3.jpg', '../public/4.jpg', '../public/remera.jpg' , '../public/gorras.jpg', '../public/sacos.jpg'];
 
   let currentImageIndex = 0;
   const slideDuration = 5000; 
@@ -18,7 +18,10 @@ const Slider = () => {
     <div className="slider">
       <div className="slider-content" ref={sliderRef}>
         {sliderImages.map((image, index) => (
-          <img src={image} alt={`Slider ${index + 1}`} key={index} className="slider-image" />
+          <div className="slider-image-container" key={index}>
+            <img src={image} alt={`Slider ${index + 1}`} className="slider-image" />
+            <h5>Ofertas, descuento 50%</h5> {/* Texto a mostrar */}
+          </div>
         ))}
       </div>
     </div>
