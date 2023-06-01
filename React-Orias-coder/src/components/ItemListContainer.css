@@ -22,9 +22,10 @@
 
 .trend-item {
   width: 23%;
-  margin-bottom: 20px;
+  margin: 20px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 4.1);
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
