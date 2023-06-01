@@ -1,0 +1,116 @@
+.contactSection {
+    background: linear-gradient(to bottom right, #686868, #333333);
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+  }
+  
+.contactTitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+.contactSection h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+.contactForm {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+  }
+  
+.contactForm textarea {
+    height: 150px;
+  }
+  
+.contactForm button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #cc512b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.contactForm button:hover {
+    background-color: #ba4628;
+  }
+.parentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .formularioContainer {
+    width: 400px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formularioContainer h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .formularioContainer input {
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+
+
+  .formularioContainer .MuiTextField-root {
+    margin-bottom: 20px;
+  }
+  
+  .formularioContainer .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #cc512b;
+  }
+  .formularioContainer .MuiInputLabel-outlined.Mui-focused {
+    color: #cc512b;
+  }
+
+  .formularioContainer button {
+    padding: 10px;
+    border: none;
+    background-color: #cc512b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .formularioContainer button:hover {
+    background-color: #ba4628;
+  }
+  @media (max-width: 600px) {
+    .formularioContainer {
+      padding: 20px;
+    }
+    
+    .contactTitle {
+      font-size: 20px;
+    }
+  }

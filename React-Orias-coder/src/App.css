@@ -57,3 +57,33 @@
 .cart-widget:hover {
   color: #cc512b;
 }
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    padding: 10px;
+  }
+
+  .navbar__logo {
+    font-size: 30px;
+    width: 60px;
+    margin-right: 5px;
+  }
+
+  .navbar__nav {
+    display: none;
+  }
+
+  .cart-widget {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar__logo {
+    font-size: 25px;
+    width: 50px;
+    margin-right: 5px;
+  }
+}

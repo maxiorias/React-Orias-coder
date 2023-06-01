@@ -5,10 +5,12 @@ import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Slider from './components/Slider';
 import Product from './components/products'; 
+import Formulario from './components/formulario';
 import theme from './theme';
 import './App.css';
 import '../src/components/ItemListContainer.css';
 import '../src/components/Slider.css';
+import '../src/components/formulario.css';
 
 const products = [
   { id: 1, name: 'Producto 1', price: 10.99, image: '../public/product1.jpg' },
@@ -26,6 +28,7 @@ function App() {
         <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
         <Slider />
         <Product products={products} /> 
+        <Formulario />
       </div>
     </ThemeProvider>
   );

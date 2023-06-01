@@ -68,3 +68,43 @@
   font-size: 18px;
   text-align: center;
 }
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+  .slider-image {
+    height: 400px;
+  }
+
+  .slider-image-container h5 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .slider-image {
+    height: 300px;
+  }
+
+  .slider-image-container h5 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider-content {
+    width: 100%;
+  }
+
+  .slider-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .slider {
+    display: none;
+  }
+
+}

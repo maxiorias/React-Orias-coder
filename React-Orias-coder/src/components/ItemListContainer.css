@@ -59,3 +59,74 @@
 }
 
 
+.item-list-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.trends-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trend-item {
+  width: 23%;
+  margin: 20px;
+  text-align: center;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 4.1);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.trend-item-container {
+  display: flex;
+  justify-content: center; 
+ }
+ 
+.trend-item-image {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.trend-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.trend-item .MuiListItemText-root {
+  color: #333;
+}
+
+.full-width-container {
+  max-width: 100%;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .trends-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .trend-item {
+    width: 45%;
+    margin: 10px;
+  }
+}
