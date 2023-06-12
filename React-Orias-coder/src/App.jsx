@@ -4,22 +4,15 @@ import { CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Slider from './components/Slider';
-import Product from './components/products'; 
-import Formulario from './components/formulario';
+import ProductSection from './components/Products'; // Actualización del nombre del componente
+import Formulario from './components/Formulario';
 import theme from './theme';
 import './App.css';
-import '../src/components/ItemListContainer.css';
-import '../src/components/Slider.css';
-import '../src/components/formulario.css';
+import './components/ItemListContainer.css'; // Actualización de la ruta del archivo
+import './components/Slider.css'; // Actualización de la ruta del archivo
+import './components/Formulario.css'; // Actualización de la ruta del archivo
 
-const products = [
-  { id: 1, name: 'Producto 1', price: 10.99, image: '../public/product1.jpg' },
-  { id: 2, name: 'Producto 2', price: 15.99, image: '../public/product1.jpg' },
-  { id: 3, name: 'Producto 3', price: 12.99, image: '../public/product1.jpg' },
-  { id: 4, name: 'Producto 4', price: 9.99, image: '../public/product1.jpg' },
-];
-
-function App() {
+const App = () => { 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -27,7 +20,7 @@ function App() {
         <Navbar />
         <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
         <Slider />
-        <Product products={products} /> 
+        <ProductSection /> 
         <Formulario />
       </div>
     </ThemeProvider>

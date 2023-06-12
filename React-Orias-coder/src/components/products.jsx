@@ -19,14 +19,9 @@ const ProductSection = () => {
     { id: 12, name: 'Producto 4', price: 9.99, image: '../public/product12.webp' },
   ];
 
-  const handleAddUnit = (productId) => {
-    // Implementar lógica para agregar una unidad del producto con el productId
-    console.log(`Agregar unidad del producto con ID ${productId}`);
-  };
-
-  const handleRemoveUnit = (productId) => {
-    // Implementar lógica para remover una unidad del producto con el productId
-    console.log(`Remover unidad del producto con ID ${productId}`);
+  const handleUnitChange = (productId, action) => {
+    // Implementar lógica para cambiar la cantidad de unidades del producto con el productId
+    console.log(`Cambiar unidades del producto con ID ${productId}, acción: ${action}`);
   };
 
   const handleBuy = (productId) => {
@@ -53,7 +48,7 @@ const ProductSection = () => {
                 <IconButton
                   style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
                   aria-label="Agregar unidad"
-                  onClick={() => handleAddUnit(product.id)}
+                  onClick={() => handleUnitChange(product.id, 'add')}
                 >
                   <AddCircleOutline />
                 </IconButton>
@@ -63,7 +58,7 @@ const ProductSection = () => {
                 <IconButton
                   style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
                   aria-label="Remover unidad"
-                  onClick={() => handleRemoveUnit(product.id)}
+                  onClick={() => handleUnitChange(product.id, 'remove')}
                 >
                   <RemoveCircleOutline />
                 </IconButton>
