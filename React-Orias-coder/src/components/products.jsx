@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, Card, CardContent, CardActions, Typography, Button, IconButton } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
+
+import products from './products.json';
 import './products.css';
 
-const ProductSection = () => {
-  const products = [
-    { id: 1, name: 'Producto 1', price: 10.99, image: '../public/product1.webp' },
-    { id: 2, name: 'Producto 2', price: 15.99, image: '../public/product2.webp' },
-    { id: 3, name: 'Producto 3', price: 12.99, image: '../public/product3.webp' },
-    { id: 4, name: 'Producto 4', price: 9.99, image: '../public/product4.webp' },
-    { id: 5, name: 'Producto 1', price: 10.99, image: '../public/product5.webp' },
-    { id: 6, name: 'Producto 2', price: 15.99, image: '../public/product6.webp' },
-    { id: 7, name: 'Producto 3', price: 12.99, image: '../public/product7.webp' },
-    { id: 8, name: 'Producto 4', price: 9.99, image: '../public/product8.webp' },
-    { id: 9, name: 'Producto 1', price: 10.99, image: '../public/product9.webp' },
-    { id: 10, name: 'Producto 2', price: 15.99, image: '../public/product10.webp' },
-    { id: 11, name: 'Producto 3', price: 12.99, image: '../public/product11.webp' },
-    { id: 12, name: 'Producto 4', price: 9.99, image: '../public/product12.webp' },
-  ];
+const ProductSection = ({ addToCart }) => { // Agregamos una nueva prop "addToCart" al componente
+  const [productQuantities, setProductQuantities] = useState({}); // Estado para almacenar la cantidad de unidades por producto
 
   const handleUnitChange = (productId, action) => {
-    // Implementar lógica para cambiar la cantidad de unidades del producto con el productId
-    console.log(`Cambiar unidades del producto con ID ${productId}, acción: ${action}`);
+    const currentQuantity = productQuantities[productId] || 0;
+
+    if (action === 'add') {
+      // Agregar una unidad
+      setProductQuantities((prevQuantities) => ({
+        ...prevQuantities,
+        [productId]: currentQuantity + 1,
+      }));
+    } else if (action === 'remove') {
+      // Remover una unidad si hay al menos una unidad
+      if (currentQuantity > 0) {
+        setProductQuantities((prevQuantities) => ({
+          ...prevQuantities,
+          [productId]: currentQuantity - 1,
+        }));
+      }
+    }
   };
 
   const handleBuy = (productId) => {
-    // Implementar lógica para comprar el producto con el productId
-    console.log(`Comprar producto con ID ${productId}`);
+    addToCart(productId); // Llamamos a la función addToCart y pasamos el productId
   };
 
   return (
@@ -53,7 +56,7 @@ const ProductSection = () => {
                   <AddCircleOutline />
                 </IconButton>
                 <Typography variant="body1" component="div">
-                  {/* Mostrar cantidad de unidades */}
+                  {productQuantities[product.id] || 0} {/* Mostrar cantidad de unidades */}
                 </Typography>
                 <IconButton
                   style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
