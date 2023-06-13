@@ -4,8 +4,7 @@ import { Home, ShoppingBasket, Email } from '@mui/icons-material';
 import CartWidget from './CartWidget';
 
 const Navbar = () => {
-    return (
-     
+    return ( 
 
       <AppBar position="static" className='navbar' sx={{ backgroundColor: '#333333' }} >
         <Toolbar>

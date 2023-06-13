@@ -13,15 +13,14 @@ const Formulario = () => {
     <div className='contactSection'>
       <h2 className='contactTitle'>Contáctenos</h2>
       <div className='parentContainer'>
-
-      <form className='formularioContainer' onSubmit={handleSubmit}>
-        <TextField label="Nombre" variant="outlined" className="inputField" />
-        <TextField label="Email" variant="outlined" className="inputField" />
-        <TextField label="Contraseña" variant="outlined" type="password" className="inputField" />
-        <Button variant="contained" color="primary" type="submit" className="submitButton">
-          Enviar
-        </Button>
-      </form>
+        <form className='formularioContainer' onSubmit={handleSubmit}>
+          <TextField label="Nombre" variant="outlined" className="inputField" />
+          <TextField label="Email" variant="outlined" className="inputField" />
+          <TextField label="Contraseña" variant="outlined" type="password" className="inputField" />
+          <Button variant="contained" color="primary" type="submit" className="submitButton">
+            Enviar
+          </Button>
+        </form>
       </div>
     </div>
   );
