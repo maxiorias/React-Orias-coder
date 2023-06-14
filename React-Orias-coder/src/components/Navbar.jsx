@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
 import { Home, ShoppingBasket, Email } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 const Navbar = () => {
@@ -14,18 +15,18 @@ const Navbar = () => {
           </Typography>
   
           <nav className="navbar__nav">
-          <a className="navbar__link" href="#">
+          <Link className="navbar__link" to="/">
             <Home sx={{ mr: 1 }} />
             Inicio
-          </a>
-          <a className="navbar__link" href="#">
+          </Link>
+          <Link className="navbar__link" to="/Productos">
             <ShoppingBasket sx={{ mr: 1 }} />
             Productos
-          </a>
-          <a className="navbar__link" href="#">
+          </Link>
+          <Link className="navbar__link" to="/Contacto">
             <Email sx={{ mr: 1 }} />
             Contacto
-          </a>
+          </Link>
         </nav>
         <CartWidget />
       </Toolbar>

@@ -6,8 +6,9 @@ import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Slider from './components/Slider';
 import ProductSection from './components/Products';
-import Formulario from './components/Formulario';
 import CartWidget from './components/CartWidget';
+import Formulario from './components/Formulario';
+import Error404 from './components/Error404/Error404';
 import theme from './theme';
 import './App.css';
 import './components/ItemListContainer.css';
@@ -19,7 +20,7 @@ const App = () => {
 
   const addToCart = (productId) => {
     setCartItems((prevItems) => prevItems + 1);
-    // Aquí puedes realizar cualquier otra lógica adicional relacionada con agregar el producto al carrito
+    
   };
 
   return (
@@ -31,21 +32,18 @@ const App = () => {
         <Navbar />
 
         <Routes>
-    
         <Route path="/" element={
             <>
               <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
               <Slider />
             </>
-        } />
-        {/* <ProductSection />
-        <Formulario />
-        <CartWidget /> */}
-
+        } />      
+            <Route path="/Productos" element={<ProductSection />}/> 
+            <Route path="/Contacto" element={<Formulario />}/>     
+            <Route path='*' element={ <Error404 />} />   
         </Routes>
       </div>
     </ThemeProvider>
-
     </BrowserRouter>
 
   );

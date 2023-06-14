@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Producto 1",
+        "name": "Remera",
         "price": 10.99,
         "image": "../public/product1.webp"
     },
@@ -70,5 +70,53 @@
         "name": "Producto 4",
         "price": 9.99,
         "image": "../public/product12.webp"
+    },
+    {
+        "id": 13,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product13.webp"
+    },
+    {
+        "id": 14,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product14.webp"
+    },
+    {
+        "id": 15,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product15.webp"
+    },
+    {
+        "id": 16,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product19.webp"
+    },
+    {
+        "id": 17,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product17.webp"
+    },
+    {
+        "id": 18,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product18.webp"
+    },
+    {
+        "id": 19,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product16.webp"
+    },
+    {
+        "id": 20,
+        "name": "Producto 3",
+        "price": 12.99,
+        "image": "../public/product20.webp"
     }
   ]
