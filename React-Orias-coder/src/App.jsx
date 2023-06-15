@@ -8,6 +8,7 @@ import Slider from './components/Slider';
 import ProductSection from './components/Products';
 import CartWidget from './components/CartWidget';
 import Formulario from './components/Formulario';
+import TabComponent from './components/Tabs';
 import Error404 from './components/Error404/Error404';
 import theme from './theme';
 import './App.css';
@@ -16,36 +17,30 @@ import './components/Slider.css';
 import './components/Formulario.css';
 
 const App = () => {
-  const [cartItems, setCartItems] = useState(0); // Estado para almacenar el número de elementos en el carrito
-
-  const addToCart = (productId) => {
-    setCartItems((prevItems) => prevItems + 1);
-    
-  };
-
   return (
     <BrowserRouter>
-
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div>
-        <Navbar />
-
-        <Routes>
-        <Route path="/" element={
-            <>
-              <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
-              <Slider />
-            </>
-        } />      
-            <Route path="/Productos" element={<ProductSection />}/> 
-            <Route path="/Contacto" element={<Formulario />}/>     
-            <Route path='*' element={ <Error404 />} />   
-        </Routes>
-      </div>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
+                  <Slider />
+                </>
+              }
+            />
+            <Route path="/Productos" element={<ProductSection />} />
+            <Route path="/Productos/:category" element={<ProductSection />} />
+            <Route path="/Contacto" element={<Formulario />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </div>
+      </ThemeProvider>
     </BrowserRouter>
-
   );
 };
 

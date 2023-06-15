@@ -10,7 +10,9 @@ const Formulario = () => {
   };
 
   return (
-    <div className='contactSection'>
+  
+
+    <div className='contactSection' >
       <h2 className='contactTitle'>Contáctenos</h2>
       <div className='parentContainer'>
         <form className='formularioContainer' onSubmit={handleSubmit}>
@@ -23,6 +25,7 @@ const Formulario = () => {
         </form>
       </div>
     </div>
+  
   );
 };
 

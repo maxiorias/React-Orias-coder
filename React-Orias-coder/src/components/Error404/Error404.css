@@ -1,0 +1,46 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin: 0; 
+    height: 100vh;
+    background-image: url('./public/desierto.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .error-image {
+    width: 300px;
+    margin-top: 20px;
+  }
+  
+  .error-text {
+    text-align: center;
+  }
+  
+  .error-title {
+    margin-top: 20px;
+  }
+
+  h2{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 2em;
+  }
+
+  /* Media queries */
+@media screen and (max-width: 320px) {
+    .error-image {
+      width: 200px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1.5em;
+    }
+  }

@@ -3,120 +3,140 @@
         "id": 1,
         "name": "Remera",
         "price": 10.99,
-        "image": "../public/product1.webp"
+        "image": "../public/product1.webp",
+        "category": "remeras"
     },
     {
         "id": 2,
         "name": "Producto 2",
         "price": 15.99,
-        "image": "../public/product2.webp"
+        "image": "../public/product2.webp",
+        "category": "remeras"
     },
     {
         "id": 3,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product3.webp"
+        "image": "../public/product3.webp",
+        "category": "remeras"
     },
     {
         "id": 4,
         "name": "Producto 4",
         "price": 9.99,
-        "image": "../public/product4.webp"
+        "image": "../public/product4.webp",
+        "category": "remeras"
     },
     {
         "id": 5,
         "name": "Producto 1",
         "price": 10.99,
-        "image": "../public/product5.webp"
+        "image": "../public/product5.webp",
+        "category": "remeras"
     },
     {
         "id": 6,
         "name": "Producto 2",
         "price": 15.99,
-        "image": "../public/product6.webp"
+        "image": "../public/product6.webp",
+        "category": "remeras"
     },
     {
         "id": 7,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product7.webp"
+        "image": "../public/product7.webp",
+        "category": "remeras"
     },
     {
         "id": 8,
         "name": "Producto 4",
         "price": 9.99,
-        "image": "../public/product8.webp"
+        "image": "../public/product8.webp",
+        "category": "remeras"
     },
     {
         "id": 9,
         "name": "Producto 1",
         "price": 10.99,
-        "image": "../public/product9.webp"
+        "image": "../public/product9.webp",
+        "category": "camisas"
     },
     {
         "id": 10,
         "name": "Producto 2",
         "price": 15.99,
-        "image": "../public/product10.webp"
+        "image": "../public/product10.webp",
+        "category": "camisas"
     },
     {
         "id": 11,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product11.webp"
+        "image": "../public/product11.webp",
+        "category": "camisas"
     },
     {
         "id": 12,
         "name": "Producto 4",
         "price": 9.99,
-        "image": "../public/product12.webp"
+        "image": "../public/product12.webp",
+        "category": "camisas"
     },
     {
         "id": 13,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product13.webp"
+        "image": "../public/product13.webp",
+        "category": "gorras" 
     },
     {
         "id": 14,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product14.webp"
+        "image": "../public/product14.webp",
+        "category": "gorras"
     },
     {
         "id": 15,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product15.webp"
+        "image": "../public/product15.webp",
+        "category": "gorras"
     },
     {
         "id": 16,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product19.webp"
+        "image": "../public/product19.webp",
+        "category": "gorras"
     },
     {
         "id": 17,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product17.webp"
+        "image": "../public/product17.webp",
+        "category": "lentes"
     },
     {
         "id": 18,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product18.webp"
+        "image": "../public/product18.webp",
+        "category": "lentes"
     },
     {
         "id": 19,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product16.webp"
+        "image": "../public/product16.webp",
+        "category": "lentes"
     },
     {
         "id": 20,
         "name": "Producto 3",
         "price": 12.99,
-        "image": "../public/product20.webp"
+        "image": "../public/product20.webp",
+        "category": "lentes"
     }
   ]

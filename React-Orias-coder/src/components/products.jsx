@@ -1,59 +1,80 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Grid, Card, CardContent, CardActions, Typography, Button, IconButton } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
-
+import TabComponent from './Tabs';
 import products from './products.json';
 import './products.css';
 
-const ProductSection = ({ addToCart }) => {
-  const [productQuantities, setProductQuantities] = useState({});
-  const [selectedImages, setSelectedImages] = useState({});
+
+const ProductSection = () => {
+  const { category } = useParams();
+  const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [isLoading, setIsLoading] = useState(true);
-
-  const handleUnitChange = (productId, action) => {
-    const currentQuantity = productQuantities[productId] || 0;
-
-    if (action === 'add') {
-      setProductQuantities((prevQuantities) => ({
-        ...prevQuantities,
-        [productId]: currentQuantity + 1,
-      }));
-    } else if (action === 'remove') {
-      if (currentQuantity > 0) {
-        setProductQuantities((prevQuantities) => ({
-          ...prevQuantities,
-          [productId]: currentQuantity - 1,
-        }));
-      }
-    }
-  };
-
-  const handleBuy = (productId) => {
-    addToCart(productId);
-  };
-
-  const handleImageUpload = (productId, event) => {
-    const file = event.target.files[0];
-    setSelectedImages((prevImages) => ({
-      ...prevImages,
-      [productId]: file,
-    }));
-  };
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    // Simulación de una carga inicial
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
   }, []);
 
+  useEffect(() => {
+    const filterProducts = () => {
+      if (selectedCategory === 'all') {
+        setFilteredProducts(products);
+      } else {
+        const filtered = products.filter((product) => product.category === selectedCategory);
+        setFilteredProducts(filtered);
+      }
+    };
+
+    filterProducts();
+  }, [selectedCategory]);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="product-section">
+      <div className="category-selector">
+        <button
+          className={`category-button ${selectedCategory === 'all' ? 'active' : ''}`}
+          onClick={() => handleCategoryChange('all')}
+        >
+          Todas
+        </button>
+        <button
+          className={`category-button ${selectedCategory === 'remeras' ? 'active' : ''}`}
+          onClick={() => handleCategoryChange('remeras')}
+        >
+          Remeras
+        </button>
+        <button
+          className={`category-button ${selectedCategory === 'camisas' ? 'active' : ''}`}
+          onClick={() => handleCategoryChange('camisas')}
+        >
+          Camisas
+        </button>
+        <button
+          className={`category-button ${selectedCategory === 'gorras' ? 'active' : ''}`}
+          onClick={() => handleCategoryChange('gorras')}
+        >
+          Gorras
+        </button>
+        <button
+          className={`category-button ${selectedCategory === 'lentes' ? 'active' : ''}`}
+          onClick={() => handleCategoryChange('lentes')}
+        >
+          Lentes
+        </button>
+      </div>
       {isLoading ? (
         <div className="loading-message">Cargando...</div>
       ) : (
         <Grid container spacing={2}>
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
               <Card>
                 <img src={product.image} alt={product.name} className="product-image" />
@@ -65,46 +86,9 @@ const ProductSection = ({ addToCart }) => {
                     ${product.price}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <IconButton
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    aria-label="Agregar unidad"
-                    onClick={() => handleUnitChange(product.id, 'add')}
-                  >
-                    <AddCircleOutline />
-                  </IconButton>
-                  <Typography variant="body1" component="div">
-                    {productQuantities[product.id] || 0}
-                  </Typography>
-                  <IconButton
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    aria-label="Remover unidad"
-                    onClick={() => handleUnitChange(product.id, 'remove')}
-                  >
-                    <RemoveCircleOutline />
-                  </IconButton>
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    onClick={() => handleBuy(product.id)}
-                  >
-                    Comprar
-                  </Button>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    style={{ display: 'none' }}
-                    onChange={(e) => handleImageUpload(product.id, e)}
-                  />
-                  <IconButton
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    aria-label="Cargar imagen"
-                    component="label"
-                  >
-                    <AddCircleOutline />
-                    <input type="file" accept="image/*" onChange={(e) => handleImageUpload(product.id, e)} hidden />
-                  </IconButton>
-                </CardActions>
+                <Button variant="contained" style={{ backgroundColor: "#cc512b", color: "#ffffff" }}>
+                  Agregar al carrito
+                </Button>
               </Card>
             </Grid>
           ))}
