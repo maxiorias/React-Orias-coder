@@ -8,7 +8,6 @@ import Slider from './components/Slider';
 import ProductSection from './components/Products';
 import CartWidget from './components/CartWidget';
 import Formulario from './components/Formulario';
-import TabComponent from './components/Tabs';
 import Error404 from './components/Error404/Error404';
 import theme from './theme';
 import './App.css';
@@ -38,6 +37,7 @@ const App = () => {
             <Route path="/Contacto" element={<Formulario />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
+          
         </div>
       </ThemeProvider>
     </BrowserRouter>

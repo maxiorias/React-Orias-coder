@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Card, CardContent, CardActions, Typography, Button, IconButton } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
-import TabComponent from './Tabs';
 import products from './products.json';
 import './products.css';
 
@@ -86,9 +85,11 @@ const ProductSection = () => {
                     ${product.price}
                   </Typography>
                 </CardContent>
+                <div className='button-container'>
                 <Button variant="contained" style={{ backgroundColor: "#cc512b", color: "#ffffff" }}>
                   Agregar al carrito
                 </Button>
+                </div>
               </Card>
             </Grid>
           ))}

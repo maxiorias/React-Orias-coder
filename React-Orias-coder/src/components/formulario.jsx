@@ -5,7 +5,6 @@ import './Formulario.css';
 const Formulario = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí puedes agregar la lógica para manejar el envío del formulario
     console.log('Formulario enviado');
   };
 
