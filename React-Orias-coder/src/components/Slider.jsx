@@ -39,7 +39,7 @@ const Slider = () => {
   return (
     <div className="slider">
       {isLoading ? (
-        <div className="loading-message">Cargando imágenes...</div>
+        <div className="loading-message">Cargando...</div>
       ) : (
         <div className="slider-content" ref={sliderRef}>
           {sliderImages.map((image, index) => (
