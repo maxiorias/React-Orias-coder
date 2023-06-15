@@ -1,5 +1,14 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+.card-content {
+  margin-bottom: 30px;
+}
 .product-section {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .product-image {
