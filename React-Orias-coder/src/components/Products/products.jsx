@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Grid, Card, CardContent, CardActions, Typography, Button, IconButton } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
-import products from './products.json';
+import products from '../products.json';
 import './products.css';
 
 
@@ -11,7 +11,6 @@ const ProductSection = () => {
   const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [isLoading, setIsLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,11 +33,6 @@ const ProductSection = () => {
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
-  };
-
-  const handleAddToCart = (productId) => {
-  
-    console.log(`Agregar al carrito: ${productId}`);
   };
 
   return (
@@ -92,21 +86,9 @@ const ProductSection = () => {
                   </Typography>
                 </CardContent>
                 <div className='button-container'>
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    onClick={() => handleAddToCart(product.id)}
-                  >
-                    Agregar al carrito
-                  </Button>
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff", marginLeft: "10px" }}
-                    component={Link}
-                    to={`/Detalle/${product.id}`}
-                  >
-                    Detalle
-                  </Button>
+                <Button variant="contained" style={{ backgroundColor: "#cc512b", color: "#ffffff" }}>
+                  Agregar al carrito
+                </Button>
                 </div>
               </Card>
             </Grid>
