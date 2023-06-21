@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import Slider from './components/Slider';
 import ProductSection from './components/Products';
+import ProductDetail from './components/ProductDetail';
 import CartWidget from './components/CartWidget';
 import Formulario from './components/Formulario';
 import Error404 from './components/Error404/Error404';
@@ -34,10 +35,10 @@ const App = () => {
             />
             <Route path="/Productos" element={<ProductSection />} />
             <Route path="/Productos/:category" element={<ProductSection />} />
+            <Route path="/Detalle/:productId" element={<ProductDetail />} />
             <Route path="/Contacto" element={<Formulario />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
-          
         </div>
       </ThemeProvider>
     </BrowserRouter>
