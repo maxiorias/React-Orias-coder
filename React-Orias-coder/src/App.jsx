@@ -18,6 +18,13 @@ import './components/Formulario.css';
 
 
 const App = () => {
+  const [cartItems, setCartItems] = useState(0);
+
+  const agregarAlCarrito = () => {
+    setCartItems(prevCartItems => prevCartItems + 1);
+  };
+
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
