@@ -8,6 +8,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [cantidad, setCantidad] = useState(1);
 
+  
   useEffect(() => {
     const foundProduct = products.find((p) => p.id === parseInt(productId));
     setProduct(foundProduct);
