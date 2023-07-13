@@ -4,17 +4,16 @@ import { Home, ShoppingBasket, Email } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
-const Navbar = () => {
-    return ( 
+const Navbar = ({ cartItems }) => {
+  return (
+    <AppBar position="static" className="navbar" sx={{ backgroundColor: '#333333' }}>
+      <Toolbar>
+        <img src="../public/kitsune.png" alt="Logo" className="navbar__logo" />
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Kitsune
+        </Typography>
 
-      <AppBar position="static" className='navbar' sx={{ backgroundColor: '#333333' }} >
-        <Toolbar>
-        <img src="../public/kitsune.png"alt="Logo" className="navbar__logo" />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1  }}>
-            Kitsune
-          </Typography>
-  
-          <nav className="navbar__nav">
+        <nav className="navbar__nav">
           <Link className="navbar__link" to="/">
             <Home sx={{ mr: 1 }} />
             Inicio
@@ -28,11 +27,10 @@ const Navbar = () => {
             Contacto
           </Link>
         </nav>
-        <CartWidget />
+        <CartWidget cartItems={cartItems} />
       </Toolbar>
     </AppBar>
-    
-    );
-  };
-  
-  export default Navbar;
+  );
+};
+
+export default Navbar;

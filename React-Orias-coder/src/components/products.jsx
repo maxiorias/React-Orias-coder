@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Grid, Card, CardContent, CardActions, Typography, Button, IconButton } from '@mui/material';
+import { Grid, Card, CardContent, Typography, Button } from '@mui/material';
 import { AddCircleOutline, RemoveCircleOutline } from '@mui/icons-material';
 import products from './products.json';
 import './products.css';
 
-
-const ProductSection = () => {
+const ProductSection = ({ handleAddToCart }) => {
   const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [isLoading, setIsLoading] = useState(true);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -36,9 +34,14 @@ const ProductSection = () => {
     setSelectedCategory(category);
   };
 
-  const handleAddToCart = (productId) => {
-  
-    console.log(`Agregar al carrito: ${productId}`);
+  const addToCart = (productId) => {
+    const selectedProduct = filteredProducts.find((product) => product.id === productId);
+    handleAddToCart(selectedProduct);
+
+    console.log('Producto agregado al carrito:');
+    console.log('Nombre:', selectedProduct.name);
+    console.log('Precio:', selectedProduct.price);
+    console.log('Categoría:', selectedProduct.category);
   };
 
   return (
@@ -83,7 +86,7 @@ const ProductSection = () => {
             <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
               <Card>
                 <img src={product.image} alt={product.name} className="product-image" />
-                <CardContent>
+                <CardContent className="card-content">
                   <Typography variant="h6" component="div">
                     {product.name}
                   </Typography>
@@ -91,17 +94,17 @@ const ProductSection = () => {
                     ${product.price}
                   </Typography>
                 </CardContent>
-                <div className='button-container'>
+                <div className="button-container">
                   <Button
                     variant="contained"
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff" }}
-                    onClick={() => handleAddToCart(product.id)}
+                    style={{ backgroundColor: '#cc512b', color: '#ffffff' }}
+                    onClick={() => addToCart(product.id)}
                   >
                     Agregar al carrito
                   </Button>
                   <Button
                     variant="contained"
-                    style={{ backgroundColor: "#cc512b", color: "#ffffff", marginLeft: "10px" }}
+                    style={{ backgroundColor: '#cc512b', color: '#ffffff', marginLeft: '10px' }}
                     component={Link}
                     to={`/Detalle/${product.id}`}
                   >

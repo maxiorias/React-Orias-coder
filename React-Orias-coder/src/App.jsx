@@ -20,30 +20,30 @@ import './components/Formulario.css';
 const App = () => {
   const [cartItems, setCartItems] = useState(0);
 
-  const agregarAlCarrito = () => {
+  const handleAddToCart = (product) => {
     setCartItems(prevCartItems => prevCartItems + 1);
+   
   };
-
 
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div>
-          <Navbar />
+          <Navbar cartItems={cartItems} />
           <Routes>
             <Route
               path="/"
               element={
                 <>
-                  <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" />
+                  <ItemListContainer greeting="¡Bienvenido a nuestra tienda de ropa!" handleAddToCart={handleAddToCart} />
                   <Slider />
                 </>
               }
             />
-            <Route path="/Productos" element={<ProductSection />} />
-            <Route path="/Productos/:category" element={<ProductSection />} />
-            <Route path="/Detalle/:productId" element={<ProductDetail />} />
+            <Route path="/Productos" element={<ProductSection handleAddToCart={handleAddToCart} />} />
+            <Route path="/Productos/:category" element={<ProductSection handleAddToCart={handleAddToCart} />} />
+            <Route path="/Detalle/:productId" element={<ProductDetail handleAddToCart={handleAddToCart} />} />
             <Route path="/Contacto" element={<Formulario />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
